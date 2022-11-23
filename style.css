@@ -1,29 +1,82 @@
 *{
     margin: 0;
     padding: 0;
+    
 }
 body {
+    font-family: "Helvetica", sans-serif;
     display: flex;
     justify-content: center;
     height: 90vh; /* for debuggin */
     
 }
 .container {
-    border: solid rgb(58, 236, 207); /* for debugging */
+    padding-top: 10px;
     width: 90vw;
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 2fr;
 }
+
+/* Sidebar styling */
 .sidebar {
+    background-color: #7dd3fc;
+    color: white;
     grid-area: 1 / 1 / 3 / 2;
-    border: dashed lightblue;
+    display: grid;
+    justify-items: start;
+    grid-template-rows: 1fr 1fr 3fr;
+    padding: 10px;
 }
+.sidebar li {
+    list-style: none;
+}
+.sidebar ul {
+    display: grid;
+    align-self: center;
+    gap: 10px; 
+}
+.sidebar ul li {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+.sidebar ul li a {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    align-self: center;
+}
+.sidebar img {
+   width: 20px;
+   height: 20px; 
+}
+.sidebar .header-logo {
+    display: flex;
+    gap: 10px;
+    padding: 5px;
+}
+.header-logo .logo {
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    background: radial-gradient(circle at center,#cbd5e1 0,#94a3b8,#64748b 100%)
+}
+
+
+/* Header Styling */
 .header {
     grid-area: 1 / 2 / 2 / 3;
-    border: dotted lightcoral; 
+    border: dotted lightcoral; /* for debugging */
 }
+
+
+
+
+
 .main {
-    border: solid black;
+    border: solid black; /* for debugging */
 }
+
