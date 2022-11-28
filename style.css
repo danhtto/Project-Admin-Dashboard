@@ -24,7 +24,7 @@ body {
     grid-area: 1 / 1 / 3 / 2;
     display: grid;
     justify-items: start;
-    grid-template-rows: .5fr .5fr 2fr;
+    grid-template-rows: .5fr .5fr 1fr;
     padding: 10px;
 }
 .sidebar li {
@@ -68,25 +68,36 @@ body {
 
 /* Header Styling */
 .header {
-    grid-area: 1 / 2 / 2 / 3;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     padding: 10px 50px 30px 50px;
     position: relative;
     box-shadow: 0px 2px 5px gray;
 }
-.search-bar {
-    grid-area: 1 / 1 / 2 / 3;
+.header .top {
+    grid-column: 1 / 3;
     display: grid;
-    grid-template-columns: 4% 85%;
+    grid-template-columns: 2fr 1fr;
+    grid-auto-columns: 0%;
+}
+.search-bar {
+    grid-column: 1 / 2 ;
+    display: grid;
+    grid-template-columns: 4% 80%;
     gap: 10px;
 
 }
+.search-bar button {
+    border-style: none;
+    background-color: white;
+}
 .search-bar input {
-    border-radius: 10px;
+    border-radius: 15px;
     background-color: #e2e8f0;
     border-style: none ;
+    padding: .75rem 1rem;
+    width: 100%;
 }
 
 .header .profile-name {
@@ -109,7 +120,7 @@ body {
 .header-bottom-row {
     grid-column: 1 / 4;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     padding-top: 10px;
 }
@@ -139,13 +150,19 @@ body {
 
 /* Main Styling */
 .main {
+    overflow: scroll;
     padding: 20px 15px 15px 15px;
     background-color: #e2e8f0;
     display: grid;
     grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr auto;
     gap: 20px;
 }
-
+.projects {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 .projects.cards {
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -161,6 +178,9 @@ body {
     border-inline-start: #D42D42 10px solid;
 }
 .card .links {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
     text-align: end;
     margin-top: 20px;
     margin-right: 10px;
@@ -169,18 +189,21 @@ body {
     padding-left: 20px;
 }
 .card p {
-    width: 90%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
 }
 
 .announcements-trending {
     position: relative;
-    display: grid;
     width: 300px;
-    height: 100vh;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: end;
 }
-.top {
 
-}
 .announcements {
     position: relative;
     background-color: white;
